@@ -1,6 +1,6 @@
 <?php
 $server = "localhost";
-$database = "share_ride_web";
+$database = "practice";
 $username = "root";
 $password = "";
 
