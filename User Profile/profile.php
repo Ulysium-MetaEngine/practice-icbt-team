@@ -1,23 +1,11 @@
 <?php
-// Enable error reporting for debugging
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 // Include the database helper file
-if (!file_exists('db_helper.php')) {
-    die("Error: db_helper.php file not found!");
-}
-include 'db_helper.php';
+require_once 'db_helper.php';
 
-// Check if the database connection is established
-if (!isset($conn)) {
-    die("Error: Database connection not established!");
-}
-
-// Replace this with the session user ID or a dynamic parameter
+// Temporarily set the user ID (replace with actual session user ID when login is implemented)
 $userId = 1;
 
-// Prepare and execute the SQL statement to fetch user details
+// Fetch user details
 $sql = "SELECT full_name, email, profile_picture FROM users WHERE id = ?";
 $stmt = $conn->prepare($sql);
 
@@ -30,12 +18,12 @@ if ($stmt) {
         $user = $result->fetch_assoc();
         $fullName = htmlspecialchars($user['full_name']);
         $email = htmlspecialchars($user['email']);
-        $profilePicture = !empty($user['profile_picture']) ? $user['profile_picture'] : 'images/default_profile.png';
-    } else {
-        $fullName = "N/A";
-        $email = "N/A";
-        $profilePicture = 'images/default_profile.png';
-    }
+        $profilePicture = !empty($user['profile_picture']) ? $user['profile_picture'] : 'images/default_profile.jpg';
+    } 
+    // //close for testing
+    // else {
+    //     die("Error: User not found.");
+    // }
 
     $stmt->close();
 } else {
