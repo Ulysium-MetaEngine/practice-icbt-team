@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Cancel button logic to close the edit form
+    //  close the edit form
     cancelButton.addEventListener('click', (event) => {
         toggleEditForm(event);
     });
