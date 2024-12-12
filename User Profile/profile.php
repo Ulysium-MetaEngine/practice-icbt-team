@@ -10,11 +10,11 @@
     <div class="profile-container">
         <div class="profile-picture">
             <!-- Placeholder for Profile Picture -->
-            <img src="placeholder.jpg" alt="Profile Picture">
+            <img src="images/profile_image.jpg" alt="Profile Picture">
         </div>
         <div class="profile-info">
-            <h2>John Doe</h2>
-            <p>Email: johndoe@example.com</p>
+            <h2>Example 1</h2>
+            <p>Email: test@gmail.com</p>
         </div>
         <a href="#" class="edit-profile-btn" onclick="toggleEditForm(event)">Edit Profile</a>
     </div>
@@ -37,6 +37,6 @@
             </div>
         </form>
     </div>
-    <script src="script.js"></script>
+    <script src="profile_script.js"></script>
 </body>
 </html>
