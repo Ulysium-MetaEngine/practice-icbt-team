@@ -36,11 +36,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute();
         $result = $stmt->get_result();
         $user = $result->fetch_assoc();
+        var_dump(password_hash($password, PASSWORD_BCRYPT));
+        var_dump($user['password']);
 
         if ($user) {
             // Check for account lockout
-            $lastAttempt = strtotime($user['last_failed_attempt']);
-            $lockoutDuration = strtotime('-15 minutes');
+            $lastAttempt = $user['last_failed_attempt'] ? (new DateTime($user['last_failed_attempt']))->getTimestamp() : 0;
+            $lockoutDuration = (new DateTime())->sub(new DateInterval('PT15M'))->getTimestamp();
             
             if ($user['failed_attempts'] >= 5 && $lastAttempt > $lockoutDuration) {
                 $error = "Account is locked. Please try again later.";
