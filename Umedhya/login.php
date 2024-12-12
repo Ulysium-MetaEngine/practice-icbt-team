@@ -11,6 +11,11 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// Set default timezone (if not already set)
+if (!ini_get('date.timezone')) {
+    date_default_timezone_set('UTC');
+}
+
 // Initialize error variable
 $error = "";
 
@@ -25,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Prepare and execute query
         $stmt = $conn->prepare("SELECT id, password, failed_attempts, last_failed_attempt FROM users WHERE email = ?");
         if (!$stmt) {
-            die("Database error: " . $conn->error);
+            die("Database error: " . htmlspecialchars($conn->error));
         }
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -34,13 +39,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($user) {
             // Check for account lockout
-            if ($user['failed_attempts'] >= 5 && strtotime($user['last_failed_attempt']) > strtotime('-15 minutes')) {
+            $lastAttempt = strtotime($user['last_failed_attempt']);
+            $lockoutDuration = strtotime('-15 minutes');
+            
+            if ($user['failed_attempts'] >= 5 && $lastAttempt > $lockoutDuration) {
                 $error = "Account is locked. Please try again later.";
             } elseif (password_verify($password, $user['password'])) {
-                // Reset failed attempts
+                // Reset failed attempts on successful login
                 $stmt = $conn->prepare("UPDATE users SET failed_attempts = 0 WHERE id = ?");
                 if (!$stmt) {
-                    die("Database error: " . $conn->error);
+                    die("Database error: " . htmlspecialchars($conn->error));
                 }
                 $stmt->bind_param("i", $user['id']);
                 $stmt->execute();
@@ -54,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Increment failed attempts
                 $stmt = $conn->prepare("UPDATE users SET failed_attempts = failed_attempts + 1, last_failed_attempt = NOW() WHERE id = ?");
                 if (!$stmt) {
-                    die("Database error: " . $conn->error);
+                    die("Database error: " . htmlspecialchars($conn->error));
                 }
                 $stmt->bind_param("i", $user['id']);
                 $stmt->execute();
@@ -85,7 +93,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'logout') {
 <body>
     <form method="POST" action="login.php">
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>" required>
         
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required minlength="8">
