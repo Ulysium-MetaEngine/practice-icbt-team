@@ -22,7 +22,7 @@ $error = "";
 // Process login form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+    $password = filter_input(INPUT_POST, 'password');
 
     if (!$email || strlen($password) < 8) {
         $error = "Invalid email or password.";
