@@ -23,11 +23,11 @@
     <form action="" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="name">Full Name</label>
-            <input type="text" name="name" id="name" value="<?php echo htmlspecialchars($user['name']); ?>" required>
+            <input type="text" name="name" id="name" value="<required>
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
+            <input type="email" name="email" id="email" value="<required>
         </div>
         <div class="form-group">
             <label for="profile_picture">Profile Picture</label>
