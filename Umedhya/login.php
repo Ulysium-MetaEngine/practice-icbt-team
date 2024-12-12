@@ -6,11 +6,6 @@ session_start();
 require_once './db.php';
 $conn = new mysqli($server, $username, $password, $database);
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
 // Set default timezone (if not already set)
 if (!ini_get('date.timezone')) {
     date_default_timezone_set('UTC');
