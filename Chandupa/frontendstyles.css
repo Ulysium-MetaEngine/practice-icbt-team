@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    height: 100vh;
+    background-color: #f4f4f9;
+    color: #333;
+    flex-direction: column;  
+    text-align: center;       
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #4CAF50;
+}
+
+.container {
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+.car-types {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.car-types h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.car-types ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.car-types li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.car-types h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #4CAF50;
+}
+
+.car-types p {
+    margin: 5px 0 0;
+    font-size: 1em;
+    color: #666;
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1em;
+    }
+    .button {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+}
