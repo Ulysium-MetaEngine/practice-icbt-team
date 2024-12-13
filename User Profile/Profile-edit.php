@@ -18,7 +18,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Include the database helper file
-require_once 'db_helper.php';
+require_once 'db-helper.php';
 
 // Get the user ID from the session
 $userId = $_SESSION['user_id'];
@@ -166,7 +166,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 document.getElementById('profilePicture').value = ""; // Reset the file input field
 
                 // Redirect to profile view
-                window.location.href = "profile_view.php";
+                window.location.href = "profile.php";
             });
         });
     </script>
@@ -210,7 +210,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <button type="button" id="cancelBtn">Cancel</button> <!-- Cancel Button -->
         </form>
 
-        <a href="profile_view.php" class="edit-profile-btn">Back to Profile</a>
+        <a href="profile.php" class="edit-profile-btn">Back to Profile</a>
     </div>
 </body>
 </html>

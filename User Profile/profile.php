@@ -1,6 +1,6 @@
 <?php
 // Include the database helper file
-require_once 'db_helper.php';
+require_once 'db-helper.php';
 
 // Temporarily set the user ID (replace with actual session user ID when login is implemented)
 $userId = 1;
@@ -48,7 +48,7 @@ if ($stmt) {
             <h2><?php echo $fullName; ?></h2>
             <p>Email: <?php echo $email; ?></p>
         </div>
-        <a href="profile_edit.php" class="edit-profile-btn">Edit Profile</a>
+        <a href="profile-edit.php" class="edit-profile-btn">Edit Profile</a>
     </div>
 </body>
 </html>
