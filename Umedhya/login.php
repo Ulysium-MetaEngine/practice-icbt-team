@@ -86,6 +86,8 @@ if (isset($_GET['action']) && $_GET['action'] === 'logout') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
 </head>
 <body>
     <form method="POST" action="login.php">
