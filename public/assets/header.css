@@ -1,0 +1,41 @@
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    width: 150px;
+    margin: 0 auto;
+}
+
+.navbar-transparent {
+    background-color: transparent !important;
+    border-bottom: 1px solid transparent;
+}
+
+.navbar.fixed-top .nav-link i {
+    top: 4px;
+}
+
+.navbar-fixed-top {
+    -webkit-backface-visibility: hidden;
+}
+
+.fixed-top .navbar-collapse {
+    background-color: #000000;
+    float: left;
+}
+
+.navbar-transparent {
+    background-color: transparent !important;
+    border-bottom: 1px solid transparent;
+}
+
+.navbar.navbar-transparent {
+    padding-top: 25px;
+}
