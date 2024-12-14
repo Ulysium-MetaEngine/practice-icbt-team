@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +9,6 @@
     <title>Login - Share Ride</title>
     <link rel="stylesheet" href="frontendstyles.css"> <!-- Link to your CSS file -->
     <link rel="stylesheet" href="footer.css"> <!-- Footer CSS -->
-
 </head>
 <body>
     <header>
@@ -43,6 +45,5 @@
         </section>
     </main>
     <script src="footer.js" defer></script>
-
 </body>
 </html>

@@ -4,5 +4,5 @@
         <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
         <a href="/terms-of-service" class="footer-link">Terms of Service</a>
     </div>
-    <p class="copyright">© 2024 Share Ride</p>
+    <p class="copyright">© <?php echo date("Y"); ?> Share Ride</p>
 </footer>
