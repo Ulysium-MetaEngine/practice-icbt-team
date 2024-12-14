@@ -1,0 +1,52 @@
+/* General footer styling */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%; /* Ensures the footer spans the entire width of the screen */
+    box-sizing: border-box; /* Includes padding and border in the element's total width/height */
+}
+
+/* Footer links */
+.footer-links {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center; /* Center the links horizontally */
+    gap: 15px; /* Space between links */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #4CAF50; /* Change color on hover */
+}
+
+/* Copyright section */
+.copyright {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .footer {
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .footer-link {
+        font-size: 0.9em; /* Adjust font size for smaller screens */
+    }
+
+    .footer-links {
+        gap: 10px; /* Reduce space between links */
+    }
+}
