@@ -22,7 +22,7 @@
     </style>
 </head>
 <body>
-    <form id="registrationForm" action="#" method="post" novalidate>
+    <form id="registrationForm" action="function.dbh.php" method="post" novalidate>
         <h2>Register</h2>
         
         <!-- Full Name -->
