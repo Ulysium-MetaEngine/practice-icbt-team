@@ -1,5 +1,5 @@
 header {
-    background-color: #333;
+    background-color: transparent;
     color: #fff;
     padding: 10px 0;
     text-align: center;
@@ -70,7 +70,7 @@ header .logo {
 }
 
 .fixed-top .navbar-collapse {
-    background-color: #000000;
+    background-color: transparent;
     float: left;
 }
 
@@ -193,16 +193,9 @@ header .logo {
     height: 50px;
 }
 
-.navbar.fixed-top .nav-link i {
-    top: 4px;
-}
 
-.navbar-absolute {
-    position: absolute;
-    width: 100%;
-    padding-top: 10px;
-    z-index: 1029;
-}
+
+
 
 .navbar-transparent .navbar-brand,
 [class*="bg"] .navbar-brand {
